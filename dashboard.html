@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | FinTechX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+
+    <section id="dashboard">
+        <h1>Welcome to Your Dashboard</h1>
+        
+        <!-- Menu for admin, user, and investor (these are just example divs) -->
+        <div id="admin-menu" style="display: none;">
+            <h2>Admin Menu</h2>
+            <!-- Admin content goes here -->
+        </div>
+
+        <div id="user-menu" style="display: none;">
+            <h2>User Menu</h2>
+            <!-- User content goes here -->
+        </div>
+
+        <div id="investor-menu" style="display: none;">
+            <h2>Investor Menu</h2>
+            <!-- Investor content goes here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FinTechX. All rights reserved.</p>
+    </footer>
+
+    <!-- Role-based display logic goes here -->
+    <script>
+        const role = localStorage.getItem('role'); // Get the user role from localStorage
+        
+        // Example of showing/hiding elements based on the role
+        if (role === 'admin') {
+            document.getElementById('admin-menu').style.display = 'block';
+            document.getElementById('user-menu').style.display = 'none';
+            document.getElementById('investor-menu').style.display = 'none';
+        } else if (role === 'user') {
+            document.getElementById('admin-menu').style.display = 'none';
+            document.getElementById('user-menu').style.display = 'block';
+            document.getElementById('investor-menu').style.display = 'none';
+        } else if (role === 'investor') {
+            document.getElementById('admin-menu').style.display = 'none';
+            document.getElementById('user-menu').style.display = 'none';
+            document.getElementById('investor-menu').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
