@@ -49,23 +49,362 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
-/* Navigation */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* Header */
+header {
+    background-color: #0044cc;
+    padding: 20px 0;
+}
+
 nav {
     display: flex;
     justify-content: center;
-    background-color: #007bff;
-    padding: 10px 0;
 }
 
 nav a {
     color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 1rem;
+    margin: 0 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
-    background-color: #0056b3;
+    border-bottom: 2px solid white;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.cta {
+    background-color: #f5a623;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #d48919;
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+#about a {
+    color: #0044cc;
+    font-weight: 700;
+}
+
+#about a:hover {
+    text-decoration: underline;
+}
+
+/* Features Section */
+#features {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#features h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#features p {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.feature-item {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Documentation Section */
+#documentation {
+    padding: 50px 20px;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+#documentation h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#documentation p {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.documentation-item {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.documentation-item:hover {
+    transform: translateY(-10px);
+}
+
+.documentation-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.documentation-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Blog Section */
+#blog {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+#blog h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#blog p {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.blog-post {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+}
+
+.blog-post h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.blog-post a {
+    font-weight: 700;
+    color: #0044cc;
+    text-transform: uppercase;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #0044cc;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #002a8d;
+}
+
+/* Footer */
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .cta {
+        font-size: 16px;
+    }
+
+    .feature-item, .documentation-item, .blog-post {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
 }
 
 
