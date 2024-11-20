@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | FinTechX</title>
+    <title>Contact | FinTechX</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -19,27 +19,22 @@
         </nav>
     </header>
 
-    <section id="blog">
-        <h1>FinTechX Blog</h1>
-        <p>Stay updated with the latest news, tips, and insights on personal finance and FinTech innovations.</p>
+    <section id="contact">
+        <h1>Contact FinTechX</h1>
+        <p>If you have any questions, feedback, or need support, please reach out to us using the form below:</p>
 
-        <div class="blog-post">
-            <h2>The Future of Personal Finance</h2>
-            <p>In this post, we explore how personal finance is evolving with the rise of digital platforms and innovative technologies.</p>
-            <a href="#">Read more</a>
-        </div>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <div class="blog-post">
-            <h2>How FinTechX Ensures Security</h2>
-            <p>Security is our top priority. Learn how we implement advanced encryption and authentication to protect your financial data.</p>
-            <a href="#">Read more</a>
-        </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <div class="blog-post">
-            <h2>5 Tips for Managing Your Money in the Digital Age</h2>
-            <p>In this post, we share some essential tips for managing your finances effectively in today's fast-paced digital world.</p>
-            <a href="#">Read more</a>
-        </div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <footer>
