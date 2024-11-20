@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout | FinTechX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section id="logout">
+        <h1>You have been logged out</h1>
+        <p>Thank you for using FinTechX. You have successfully logged out of your account.</p>
+        <a href="login.html" class="cta">Go to Login</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FinTechX. All rights reserved.</p>
+    </footer>
+
+    <!-- Logout script -->
+    <script>
+        // Clear the user session (role and any other session data)
+        localStorage.removeItem('role'); // Clear stored role
+        localStorage.removeItem('userData'); // Optionally clear any other session data
+
+        // Redirect to the login page after logout
+        setTimeout(function() {
+            window.location.href = 'login.html'; // Redirect after 2 seconds
+        }, 2000); // 2-second delay before redirecting
+    </script>
+</body>
+</html>
