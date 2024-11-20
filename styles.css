@@ -745,3 +745,86 @@ form button:active {
         padding: 10px;
     }
 }
+#signup {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.signup-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0044cc;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.terms {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.cta-primary {
+    background-color: #f5a623;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-primary:hover {
+    background-color: #d48919;
+}
+
+p a {
+    color: #0044cc;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
