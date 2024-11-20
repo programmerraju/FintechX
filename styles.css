@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -89,4 +89,19 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9rem;
+}
+/* media query for responsiveness */
+@media (max-width: 768px) {
+    header nav a {
+        font-size: 0.9rem;
+        margin: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
