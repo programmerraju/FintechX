@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | FinTechX</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,47 +15,102 @@
         </nav>
     </header>
 
-    <section id="dashboard">
-        <h1>Welcome to Your Dashboard</h1>
-        
-        <!-- Menu for admin, user, and investor (these are just example divs) -->
-        <div id="admin-menu" style="display: none;">
-            <h2>Admin Menu</h2>
-            <!-- Admin content goes here -->
-        </div>
+    <div class="dashboard-container">
+        <aside id="sidebar">
+            <h2>FinTechX Dashboard</h2>
+            <ul>
+                <li><a href="#" id="admin-menu" class="menu-item">Admin Dashboard</a></li>
+                <li><a href="#" id="user-menu" class="menu-item">User Dashboard</a></li>
+                <li><a href="#" id="investor-menu" class="menu-item">Investor Dashboard</a></li>
+            </ul>
+        </aside>
 
-        <div id="user-menu" style="display: none;">
-            <h2>User Menu</h2>
-            <!-- User content goes here -->
-        </div>
+        <main id="dashboard-content">
+            <div id="admin-dashboard" class="dashboard-content-section" style="display: none;">
+                <h2>Admin Overview</h2>
+                <p>Welcome, Admin! Here are your quick stats:</p>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p>1,234</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Investments</h3>
+                        <p>$50,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Requests</h3>
+                        <p>15</p>
+                    </div>
+                </div>
+                <p><a href="admin-settings.html">Go to Admin Settings</a></p>
+            </div>
 
-        <div id="investor-menu" style="display: none;">
-            <h2>Investor Menu</h2>
-            <!-- Investor content goes here -->
-        </div>
-    </section>
+            <div id="user-dashboard" class="dashboard-content-section" style="display: none;">
+                <h2>User Overview</h2>
+                <p>Welcome, User! Here are your quick stats:</p>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>Your Balance</h3>
+                        <p>$1,234</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Your Investments</h3>
+                        <p>3</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Recent Activity</h3>
+                        <p>Invested in Project A</p>
+                    </div>
+                </div>
+                <p><a href="user-profile.html">Go to Your Profile</a></p>
+            </div>
+
+            <div id="investor-dashboard" class="dashboard-content-section" style="display: none;">
+                <h2>Investor Overview</h2>
+                <p>Welcome, Investor! Here are your quick stats:</p>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>Your Portfolio</h3>
+                        <p>$100,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Investments</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Upcoming Projects</h3>
+                        <p>2</p>
+                    </div>
+                </div>
+                <p><a href="investor-portfolio.html">View Your Portfolio</a></p>
+            </div>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2024 FinTechX. All rights reserved.</p>
     </footer>
 
-    <!-- Role-based display logic goes here -->
     <script>
-        const role = localStorage.getItem('role'); // Get the user role from localStorage
+        const role = localStorage.getItem('role');
         
-        // Example of showing/hiding elements based on the role
+        // Show/hide sections based on the user's role
         if (role === 'admin') {
             document.getElementById('admin-menu').style.display = 'block';
             document.getElementById('user-menu').style.display = 'none';
             document.getElementById('investor-menu').style.display = 'none';
+            document.getElementById('admin-dashboard').style.display = 'block';
         } else if (role === 'user') {
             document.getElementById('admin-menu').style.display = 'none';
             document.getElementById('user-menu').style.display = 'block';
             document.getElementById('investor-menu').style.display = 'none';
+            document.getElementById('user-dashboard').style.display = 'block';
         } else if (role === 'investor') {
             document.getElementById('admin-menu').style.display = 'none';
             document.getElementById('user-menu').style.display = 'none';
             document.getElementById('investor-menu').style.display = 'block';
+            document.getElementById('investor-dashboard').style.display = 'block';
         }
     </script>
 </body>
