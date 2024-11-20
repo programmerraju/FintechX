@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | FinTechX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="features.html">Features</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="signup">
+        <div class="signup-container">
+            <h1>Create Your Account</h1>
+            <p>Join FinTechX and start revolutionizing your personal finance today!</p>
+            <form action="#" method="POST" id="signup-form">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="terms.html">Terms and Conditions</a></label>
+                </div>
+
+                <button type="submit" class="cta-primary">Sign Up</button>
+            </form>
+
+            <p>Already have an account? <a href="login.html">Log in here</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FinTechX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form Validation
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
