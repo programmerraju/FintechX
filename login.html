@@ -57,13 +57,37 @@
             }
         });
     </script>
+    
     <script>
         function login() {
             const role = document.getElementById('role').value;
+    
+            if (!role) {
+                alert("Please select a valid role.");
+                return;
+            }
+    
+            // Save the role in localStorage
             localStorage.setItem('role', role);
-            window.location.href = 'dashboard.html'; // Redirect to dashboard
+    
+            // Redirect based on the role
+            switch (role) {
+                case 'admin':
+                    window.location.href = 'admin-dashboard.html';
+                    break;
+                case 'investor':
+                    window.location.href = 'investor-dashboard.html';
+                    break;
+                case 'user':
+                    window.location.href = 'dashboard.html';
+                    break;
+                default:
+                    alert("Invalid role selected.");
+                    break;
+            }
         }
     </script>
+    
     
 </body>
 
