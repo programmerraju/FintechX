@@ -28,12 +28,13 @@
             <form action="#" method="POST" id="login-form">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
+            
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
+            
                 <button type="submit" class="cta-primary">Log In</button>
             </form>
+            
 
             <div class="login-links">
                 <p><a href="signup.html">Don't have an account? Sign up here</a></p>
@@ -59,27 +60,26 @@
     </script>
     
     <script>
-        // Login function that checks credentials and redirects based on role
+        // Login Function
         document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            
+            event.preventDefault(); // Prevent form submission
+    
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            
+    
             // Retrieve user data from localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));
-            
+    
             if (!userData || userData.email !== email || userData.password !== password) {
                 alert("Invalid email or password.");
             } else {
-                // If valid, set role in localStorage
-                const role = 'user'; // This should be dynamic if you are implementing roles during signup
-                localStorage.setItem('role', role);
-                
-                // Redirect based on role
-                switch (role) {
+                // If login is successful, set role in localStorage and redirect
+                localStorage.setItem('role', userData.role); // Store user role
+    
+                // Redirect based on the user's role
+                switch (userData.role) {
                     case 'admin':
-                        window.location.href = 'admin-dashboard.html';
+                        window.location.href = 'admin-dashboard.html'; // Redirect to admin dashboard
                         break;
                     case 'investor':
                         window.location.href = 'investor-dashboard.html';
@@ -88,7 +88,7 @@
                         window.location.href = 'dashboard.html';
                         break;
                     default:
-                        alert("Invalid role selected.");
+                        alert("Invalid role.");
                 }
             }
         });
