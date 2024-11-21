@@ -11,17 +11,13 @@
     <header>
         <nav>
             <a href="index.html">Home</a>
-            <a href="logout.html">Logout</a>
-            
+            <a href="logout.html" id="logout-link">Logout</a>
             <!-- Dynamic Links -->
-        <a href="dashboard.html" id="dashboard-link" style="display: none;">Dashboard</a>
-        <a href="admin-dashboard.html" id="admin-dashboard-link" style="display: none;">Admin Panel</a>
-        <a href="investor-dashboard.html" id="investor-dashboard-link" style="display: none;">Investor Dashboard</a>
-
-        <!-- Login and Logout -->
-        <a href="login.html" id="login-link">Login</a>
-        <a href="logout.html" id="logout-link" style="display: none;">Logout</a>
-    </nav>
+            <a href="dashboard.html" id="dashboard-link" style="display: none;">Dashboard</a>
+            <a href="admin-dashboard.html" id="admin-dashboard-link" style="display: none;">Admin Panel</a>
+            <a href="investor-dashboard.html" id="investor-dashboard-link" style="display: none;">Investor Dashboard</a>
+            <!-- Login and Logout -->
+            <a href="login.html" id="login-link" style="display: none;">Login</a>
         </nav>
     </header>
 
@@ -29,9 +25,9 @@
         <aside id="sidebar">
             <h2>FinTechX Dashboard</h2>
             <ul>
-                <li><a href="admin-dashboard.html" id="admin-menu" class="menu-item">Admin Dashboard</a></li>
-                <li><a href="user-dashboard.html" id="user-menu" class="menu-item">User Dashboard</a></li>
-                <li><a href="investor-dashboard.html" id="investor-menu" class="menu-item">Investor Dashboard</a></li>
+                <li><a href="admin-dashboard.html" id="admin-menu" class="menu-item" style="display: none;">Admin Dashboard</a></li>
+                <li><a href="user-dashboard.html" id="user-menu" class="menu-item" style="display: none;">User Dashboard</a></li>
+                <li><a href="investor-dashboard.html" id="investor-menu" class="menu-item" style="display: none;">Investor Dashboard</a></li>
             </ul>
         </aside>
 
@@ -39,61 +35,19 @@
             <div id="admin-dashboard" class="dashboard-content-section" style="display: none;">
                 <h2>Admin Overview</h2>
                 <p>Welcome, Admin! Here are your quick stats:</p>
-                <div class="stat-cards">
-                    <div class="stat-card">
-                        <h3>Total Users</h3>
-                        <p>1,234</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Total Investments</h3>
-                        <p>$50,000</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Pending Requests</h3>
-                        <p>15</p>
-                    </div>
-                </div>
-                <p><a href="admin-settings.html">Go to Admin Settings</a></p>
+                <!-- Stats here -->
             </div>
 
             <div id="user-dashboard" class="dashboard-content-section" style="display: none;">
                 <h2>User Overview</h2>
                 <p>Welcome, User! Here are your quick stats:</p>
-                <div class="stat-cards">
-                    <div class="stat-card">
-                        <h3>Your Balance</h3>
-                        <p>$1,234</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Your Investments</h3>
-                        <p>3</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Recent Activity</h3>
-                        <p>Invested in Project A</p>
-                    </div>
-                </div>
-                <p><a href="user-profile.html">Go to Your Profile</a></p>
+                <!-- Stats here -->
             </div>
 
             <div id="investor-dashboard" class="dashboard-content-section" style="display: none;">
                 <h2>Investor Overview</h2>
                 <p>Welcome, Investor! Here are your quick stats:</p>
-                <div class="stat-cards">
-                    <div class="stat-card">
-                        <h3>Your Portfolio</h3>
-                        <p>$100,000</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Active Investments</h3>
-                        <p>5</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Upcoming Projects</h3>
-                        <p>2</p>
-                    </div>
-                </div>
-                <p><a href="investor-portfolio.html">View Your Portfolio</a></p>
+                <!-- Stats here -->
             </div>
         </main>
     </div>
@@ -104,26 +58,30 @@
 
     <script>
         const role = localStorage.getItem('role');
-        
-        // Show/hide sections based on the user's role
-        if (role === 'admin') {
-            document.getElementById('admin-menu').style.display = 'block';
-            document.getElementById('user-menu').style.display = 'none';
-            document.getElementById('investor-menu').style.display = 'none';
-            document.getElementById('admin-dashboard').style.display = 'block';
-        } else if (role === 'user') {
-            document.getElementById('admin-menu').style.display = 'none';
-            document.getElementById('user-menu').style.display = 'block';
-            document.getElementById('investor-menu').style.display = 'none';
-            document.getElementById('user-dashboard').style.display = 'block';
-        } else if (role === 'investor') {
-            document.getElementById('admin-menu').style.display = 'none';
-            document.getElementById('user-menu').style.display = 'none';
-            document.getElementById('investor-menu').style.display = 'block';
-            document.getElementById('investor-dashboard').style.display = 'block';
+        const isAuthenticated = role !== null; // Check if user is logged in
+
+        // If user is not logged in, redirect to login page
+        if (!isAuthenticated) {
+            window.location.href = 'login.html'; // Redirect to login if not authenticated
+        } else {
+            // Show/hide sections based on the user's role
+            if (role === 'admin') {
+                document.getElementById('admin-menu').style.display = 'block';
+                document.getElementById('user-menu').style.display = 'none';
+                document.getElementById('investor-menu').style.display = 'none';
+                document.getElementById('admin-dashboard').style.display = 'block';
+            } else if (role === 'user') {
+                document.getElementById('admin-menu').style.display = 'none';
+                document.getElementById('user-menu').style.display = 'block';
+                document.getElementById('investor-menu').style.display = 'none';
+                document.getElementById('user-dashboard').style.display = 'block';
+            } else if (role === 'investor') {
+                document.getElementById('admin-menu').style.display = 'none';
+                document.getElementById('user-menu').style.display = 'none';
+                document.getElementById('investor-menu').style.display = 'block';
+                document.getElementById('investor-dashboard').style.display = 'block';
+            }
         }
     </script>
-    
-    
 </body>
 </html>
