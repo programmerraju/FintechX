@@ -26,14 +26,15 @@
 
     <!-- Logout script -->
     <script>
-        // Clear the user session (role and any other session data)
-        localStorage.removeItem('role'); // Clear stored role
-        localStorage.removeItem('userData'); // Optionally clear any other session data
-
-        // Redirect to the login page after logout
+        // Clear session data on logout
+        localStorage.removeItem('role'); // Clear user role
+        localStorage.removeItem('userData'); // Clear user details (optional)
+    
+        // Redirect to login page after 2 seconds
         setTimeout(function() {
-            window.location.href = 'login.html'; // Redirect after 2 seconds
-        }, 2000); // 2-second delay before redirecting
+            window.location.href = 'login.html';
+        }, 2000);
     </script>
+    
 </body>
 </html>
